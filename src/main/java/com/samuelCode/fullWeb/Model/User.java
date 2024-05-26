@@ -1,10 +1,12 @@
 package com.samuelCode.fullWeb.Model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 @Entity
 public class User {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private long id;
     private String firstName;
     private String lastName;
