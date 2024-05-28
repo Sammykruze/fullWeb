@@ -26,9 +26,9 @@ public class UserController {
         List<User> listAllUsers = userService.displayAllUser();
         return ResponseEntity.status(HttpStatus.OK).body(listAllUsers);
     }
-    @RequestMapping(method = RequestMethod.GET, value = "/getUserId")
+    @RequestMapping(method = RequestMethod.GET, value = "/getUserId/{user_id}")
     public ResponseEntity<Object> saveUser(@PathVariable int user_id) {
-        Optional<User> getSingleUser = userService.viewSingleUser( user_id);
+        Optional<User> getSingleUser = userService.viewSingleUser(user_id);
         return ResponseEntity.status(HttpStatus.OK).body(getSingleUser);
          }
     }

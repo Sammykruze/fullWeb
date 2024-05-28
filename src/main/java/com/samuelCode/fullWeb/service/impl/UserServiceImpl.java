@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<User> viewSingleUser(long user_id) {
         Optional<User> getSingleUser = userRepo.findById(user_id);
-        return  getSingleUser;
+        return getSingleUser;
 
     }
 
