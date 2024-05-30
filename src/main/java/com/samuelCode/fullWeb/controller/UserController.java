@@ -31,5 +31,17 @@ public class UserController {
         Optional<User> getSingleUser = userService.viewSingleUser(user_id);
         return ResponseEntity.status(HttpStatus.OK).body(getSingleUser);
          }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/update/{user_id}")
+    public ResponseEntity<Object> editByUserId (@RequestBody User user){
+        userService.updateUser(user);
+        return ResponseEntity.status(HttpStatus.OK).body("User " + user.getId() + " updated successfully");
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/delete/{user_id}")
+    public ResponseEntity<Object> deleteByUserId (@PathVariable int user_id){
+        userService.deleteUser(user_id);
+        return ResponseEntity.status(HttpStatus.OK).body("User " + user_id + " deleted successfully");
+        }
     }
 

@@ -44,5 +44,21 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public void updateUser(User user) {
+        Optional<User> editUser = userRepo.findById(user.getId());
+        if (editUser.isPresent()){
+            userRepo.save(user);
+        }
+    }
+
+    @Override
+    public void deleteUser(long user_id) {
+        Optional<User> delete = userRepo.findById(user_id);
+        if (delete.isPresent()){
+            userRepo.delete(delete.get());
+        };
+    }
+
 
 }
