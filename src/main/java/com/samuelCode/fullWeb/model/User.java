@@ -1,16 +1,22 @@
-package com.samuelCode.fullWeb.Model;
+package com.samuelCode.fullWeb.model;
 
 import jakarta.persistence.*;
 
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true, nullable = false)
     private long id;
+    @Column(nullable = false, length = 20)
     private String firstName;
+
+    @Column(nullable = false, length = 20)
     private String lastName;
+
+    @Column(unique = true, nullable = false)
     private String eMail;
+
 
     public long getId() {
         return id;
@@ -38,12 +44,6 @@ public class User {
     }
 
     public void seteMail(String eMail) {
-        this.eMail = eMail;
-    }
-
-    public User(String firstName, String lastName, String eMail) {
-        this.firstName = firstName;
-        this.lastName = lastName;
         this.eMail = eMail;
     }
 }
