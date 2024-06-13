@@ -1,6 +1,6 @@
 package com.samuelCode.fullWeb.controller;
 
-import com.samuelCode.fullWeb.model.User;
+import com.samuelCode.fullWeb.entity.User;
 import com.samuelCode.fullWeb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
