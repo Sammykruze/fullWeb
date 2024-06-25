@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/api/v1/auth")
+@RequestMapping(value = "/api")
 //@Api(value = "USERAPI", tags = { "USERAPI" })
 public class UserRegController {
     private final UserRegService userRegService;

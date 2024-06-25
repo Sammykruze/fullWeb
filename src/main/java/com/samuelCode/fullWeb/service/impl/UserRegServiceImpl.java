@@ -40,11 +40,12 @@ public class UserRegServiceImpl implements UserRegService {
    @Autowired
    private AuthenticationManager authenticationManager;
 
-    @Bean
+   /* @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
         return http.getSharedObject(AuthenticationManagerBuilder.class)
                 .build();
-    }
+    }*/
+
     @Autowired
     private TokenAuthenticationService jwtUtils;
 
