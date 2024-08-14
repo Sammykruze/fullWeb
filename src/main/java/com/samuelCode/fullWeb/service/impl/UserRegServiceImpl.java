@@ -9,17 +9,15 @@ import com.samuelCode.fullWeb.model.LoginResponse;
 import com.samuelCode.fullWeb.model.UserRegDTO;
 import com.samuelCode.fullWeb.repository.RoleRepo;
 import com.samuelCode.fullWeb.repository.UserRegRepo;
-import com.samuelCode.fullWeb.security.TokenAuthenticationService;
+import com.samuelCode.fullWeb.config.TokenAuthenticationService;
 import com.samuelCode.fullWeb.service.UserRegService;
 
+import lombok.RequiredArgsConstructor;
 import org.hibernate.service.spi.ServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -31,14 +29,15 @@ import java.util.Date;
 
 
 @Service
+@RequiredArgsConstructor
 public class UserRegServiceImpl implements UserRegService {
     private final Logger logger = LoggerFactory.getLogger(getClass());
-    @Autowired
-    UserRegRepo authDAO;
-    @Autowired
-    RoleRepo roleRepo;
-   @Autowired
-   private AuthenticationManager authenticationManager;
+
+    private final UserRegRepo authDAO;
+
+    private final RoleRepo roleRepo;
+
+   private final AuthenticationManager authenticationManager;
 
    /* @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
@@ -67,7 +66,7 @@ public class UserRegServiceImpl implements UserRegService {
                 pwd = new BCryptPasswordEncoder(11).encode(userRegDTO.getPassword());
             }
 
-            UserRole role = roleRepo.findByRoleName(userRegDTO.getRoleName());
+             UserRole role = roleRepo.findByRoleName(userRegDTO.getRoleName());
             Collection<UserRole> userRole = new ArrayList<>();
             userRole.add(role);
 

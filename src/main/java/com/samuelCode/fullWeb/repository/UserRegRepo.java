@@ -4,9 +4,10 @@ import com.samuelCode.fullWeb.entity.UserReg;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface UserRegRepo extends JpaRepository<UserReg, Long> {
-    UserReg findByUsername(String username);
-
-    UserReg findByEmail(String email);
+    Optional<UserReg> findByUsername(String username);
+    Optional<UserReg> findByEmail(String email);
 }
