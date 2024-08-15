@@ -1,10 +1,16 @@
 package com.samuelCode.fullWeb.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserRegDTO {
 
     private String username;
@@ -15,7 +21,4 @@ public class UserRegDTO {
     private Date createdDate;
     private String roleName;
 
-    public UserRegDTO() {
-        super();
-    }
 }

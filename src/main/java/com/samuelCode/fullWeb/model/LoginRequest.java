@@ -1,21 +1,17 @@
 package com.samuelCode.fullWeb.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class LoginRequest {
 
-    private String username;
+    private String userEmail;
     private String password;
 
-
-    public LoginRequest() {
-        super();
-    }
-
-    public LoginRequest(String username, String password) {
-        super();
-        this.username = username;
-        this.password = password;
-    }
 }

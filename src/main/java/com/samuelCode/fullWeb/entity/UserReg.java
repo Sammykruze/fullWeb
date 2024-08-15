@@ -10,6 +10,7 @@ import java.util.Date;
 
 @Entity
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "user_reg")
