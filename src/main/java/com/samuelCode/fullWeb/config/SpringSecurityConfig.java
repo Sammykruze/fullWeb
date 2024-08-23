@@ -21,14 +21,12 @@ public class SpringSecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+
         http
-                .csrf()
-                .disable()
-                .authorizeHttpRequests()
-                .requestMatchers("/api/v1/auth/**", "/user/**")
-                .permitAll()
-                .anyRequest()
-                .authenticated()
+                .csrf().disable()
+                .authorizeRequests()
+                .requestMatchers("/api/v1/auth/**", "/user/**").permitAll()
+                .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -39,5 +37,4 @@ public class SpringSecurityConfig {
         return http.build();
     }
 
-
-    }
+}
