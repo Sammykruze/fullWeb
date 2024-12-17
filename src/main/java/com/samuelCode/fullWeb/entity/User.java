@@ -1,4 +1,4 @@
-package com.samuelCode.fullWeb.model;
+package com.samuelCode.fullWeb.entity;
 
 import jakarta.persistence.*;
 
@@ -46,4 +46,5 @@ public class User {
     public void seteMail(String eMail) {
         this.eMail = eMail;
     }
+
 }

@@ -1,6 +1,6 @@
 package com.samuelCode.fullWeb.service.impl;
 
-import com.samuelCode.fullWeb.model.User;
+import com.samuelCode.fullWeb.entity.User;
 import com.samuelCode.fullWeb.repository.UserRepo;
 import com.samuelCode.fullWeb.service.UserService;
 import jakarta.transaction.Transactional;

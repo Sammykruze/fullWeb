@@ -1,6 +1,6 @@
 package com.samuelCode.fullWeb.service;
 
-import com.samuelCode.fullWeb.model.User;
+import com.samuelCode.fullWeb.entity.User;
 
 import java.util.List;
 import java.util.Optional;

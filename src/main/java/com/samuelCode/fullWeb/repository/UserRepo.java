@@ -1,6 +1,6 @@
 package com.samuelCode.fullWeb.repository;
 
-import com.samuelCode.fullWeb.model.User;
+import com.samuelCode.fullWeb.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
